@@ -96,11 +96,6 @@
           ; The optimization level.  May be :whitespace, :simple, or :advanced.
           ; Defaults to :whitespace.
           :optimizations :whitespace
-          ; This flag will cause all (assert x) calls to be removed during compilation
-          ; Useful for production. Default is always false even in advanced compilation.
-          ; Does NOT specify goog.asserts.ENABLE_ASSERTS which is different and used by
-          ; the closure library.
-          :elide-asserts true
           ; Determines whether the JavaScript output will be tabulated in
           ; a human-readable manner.  Defaults to true.
           :pretty-print true
@@ -115,6 +110,8 @@
           ; Wrap the JavaScript output in (function(){...};)() to avoid clobbering globals.
           ; Defaults to true when using advanced compilation, false otherwise.
           :output-wrapper false
+          ; If targeting nodejs add this line. Takes no other options at the moment.
+          :target :nodejs
           ; Configure externs files for external libraries.
           ; Defaults to the empty vector [].
           ; For this entry, and those below, you can find a very good explanation at:
